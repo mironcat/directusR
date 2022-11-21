@@ -26,7 +26,7 @@ DataBaseInit <- R6::R6Class(classname = "DataBaseInit",
                               },
                               print = function(...) {
                                 cat("Database info: \n")
-                                cat("  database: ", self$db, "\n", sep = "")
+                                cat("  db: ", self$db, "\n", sep = "")
                                 cat("  auth:  ", self$auth.status, "\n", sep = "")
                                 cat("  base url:  ", self$base.url, "\n", sep = "")
                                 cat("  selected table:  ", self$current.table, "\n", sep = "")
@@ -99,8 +99,9 @@ DataBaseInit$set( 'public',
                     invisible(self)
                   })
 
-# paleosibDB <- DataBaseInit$new(db="paleosib", directus.version=8)
-# paleosibDB$auth(login="534temp@gmail.com", password="LJat9spx")
-# paleosibDB
-# taxanorm=paleosibDB$get_items('taxanorm', params="?limit=-1")
-# paleosibDB$base.url
+paleosibDB <- DataBaseInit$new(db="paleosib", directus.version=8)
+
+paleosibDB$auth(login="534temp@gmail.com", password="LJat9spx")
+paleosibDB
+taxanorm=paleosibDB$get_items('taxanorm', params="?limit=10")
+paleosibDB$base.url
