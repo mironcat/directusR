@@ -99,9 +99,9 @@ DataBaseInit$set( 'public',
                     invisible(self)
                   })
 
-paleosibDB <- DataBaseInit$new(db="paleosib", directus.version=8)
-
-paleosibDB$auth(login="534temp@gmail.com", password="LJat9spx")
-paleosibDB
-taxanorm=paleosibDB$get_items('taxanorm', params="?limit=10")
-paleosibDB$base.url
+# paleosibDB <- DataBaseInit$new(db="paleosib", directus.version=8)
+#
+# paleosibDB$auth(login="534temp@gmail.com", password="LJat9spx")
+# paleosibDB
+# taxanorm=paleosibDB$get_items('taxanorm', params="?limit=1")
+# paleosibDB$base.url
