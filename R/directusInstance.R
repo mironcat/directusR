@@ -37,8 +37,10 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                     self$db  <- db
                                     self$directus.version  <- directus.version
                                     if (is.list(db.info)) {
+                                      #print("db.info is list. Accept custom database info")
                                       self$db.info <- db.info
                                     } else {
+                                      #print("db.info is NA, accept tempDBinfo")
                                       self$db.info <- private$db.temp
                                     }
                                     self$base.url <- self$db.info[[db]]$base.url
@@ -51,7 +53,7 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                     cat("Database info: \n")
                                     cat("  db: ", self$db, "\n", sep = "")
                                     cat("  auth:  ", self$auth.status, "\n", sep = "")
-                                    cat("  base url:  ", self$base.url, "\n", sep = "")
+                                    cat("  base.url:  ", self$base.url, "\n", sep = "")
                                     cat("  selected table:  ", self$current.table, "\n", sep = "")
                                     cat("  number of tables:  ", length(self$table.names), "\n", sep = "")
                                     invisible(self)

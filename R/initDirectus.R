@@ -6,7 +6,7 @@ source('R/directusInstance.R',local = T)
 #' @return An instance of directusInstance class
 #' @examples
 #' library(directusR)
-#' db1<-initDirectus(db='palebot')
+#' db1<-initDirectus(db='paleobot')
 #' db1
 #' # or
 #' db2<-initDirectus(db='paleosib', directus.version=8)

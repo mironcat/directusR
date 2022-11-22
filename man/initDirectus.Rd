@@ -51,7 +51,7 @@ Run \code{db$get_items()} with parameters.
 }
 \examples{
 library(directusR)
-db1<-initDirectus(db='palebot')
+db1<-initDirectus(db='paleobot')
 db1
 # or
 db2<-initDirectus(db='paleosib', directus.version=8)
@@ -67,7 +67,7 @@ db.info <- list(
   )
  )
 db3<-initDirectus(db='myproject', db.info=db.info)
-db2
+db3
 }
 \seealso{
 \code{\link[=directusInstance]{directusInstance()}} - class documentation

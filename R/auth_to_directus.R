@@ -1,6 +1,6 @@
 #devtools::install_github("r-lib/httr")
-library("httr")
-library("jsonlite")
+library(httr)
+library(jsonlite)
 #library(openssl)
 auth_to_directus <- function(base.url, login, password, directus_version=9) {
   if(directus_version<9){
