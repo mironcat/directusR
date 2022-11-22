@@ -16,7 +16,7 @@ auth_to_directus <- function(base.url, login, password, directus_version=9) {
   )
   req<-httr::POST(paste0(base.url, url_auth), body = rbody, httr::content_type_json()
   )
-  res <- jsonlite::fromJSON(httr::content(req, "text"))$data
+  res <- jsonlite::fromJSON(httr::content(req, "text",encoding = "UTF-8"))$data
   if(is.character(res$token) & directus_version<9) {
     return (
       list(

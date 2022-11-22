@@ -1,15 +1,15 @@
 Package: directusR
 Type: Package
 Title: What the Package Does (Title Case)
-Version: 0.1.0
+Version: 0.1.1
 Author: Eugeny Karasev
 Maintainer: The package maintainer <534temp@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: working with REST API of Directus Headless CMS 
+License: MIT license
 Encoding: UTF-8
-LazyData: false
+LazyData: true
 RoxygenNote: 7.2.2
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
