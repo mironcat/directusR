@@ -3,7 +3,7 @@ source('R/auth_to_directus.R')
 source('R/read_write.R')
 
 #  класс DatabaseInit
-DataBaseInit <- R6::R6Class(classname = "DataBaseInit",
+initDirectus <- R6::R6Class(classname = "initDirectus",
                             public = list(
                               db  = NA,
                               base.url = NA,
@@ -62,7 +62,7 @@ DataBaseInit <- R6::R6Class(classname = "DataBaseInit",
 )
 
 # добавляем метод get_items
-DataBaseInit$set( 'public',
+initDirectus$set( 'public',
                   'auth',
                   function(login, password)
                   {
@@ -76,7 +76,7 @@ DataBaseInit$set( 'public',
                     invisible(self)
                   })
 # добавляем метод get_items
-DataBaseInit$set( 'public',
+initDirectus$set( 'public',
                   'get_items',
                   function(tablename, params)
                   {
@@ -93,14 +93,14 @@ DataBaseInit$set( 'public',
                 )
 
 # добавляем метод create_items
-DataBaseInit$set( 'public',
+initDirectus$set( 'public',
                   'create_items',
                   function(tablename) {
                     self$current.table <- tablename
                     invisible(self)
                   })
 
-# paleosibDB <- DataBaseInit$new(db="paleosib", directus.version=8)
+# paleosibDB <- initDirectus$new(db="paleosib", directus.version=8)
 #
 # paleosibDB$auth(login="534temp@gmail.com", password="LJat9spx")
 # paleosibDB
