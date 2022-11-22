@@ -2,7 +2,7 @@
 \alias{auth_to_directus}
 \title{Autentificate}
 \usage{
-auth_to_directus(base.url="base url", login="email of user", password="some password")
+auth_to_directus(base.url, login, password, directus_version)
 }
 \description{
 return list with

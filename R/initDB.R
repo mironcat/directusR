@@ -1,3 +1,4 @@
+library("httr")
 source('R/auth_to_directus.R')
 source('R/read_write.R')
 
