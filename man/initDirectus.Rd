@@ -20,9 +20,6 @@ An instance of directusInstance class
 Initialization and working with \href{https://docs.directus.io/reference/introduction.html}{Directus REST API}
 }
 \details{
-\subsection{Description}{
-}
-
 \subsection{Methods}{
 \subsection{Authentification}{
 

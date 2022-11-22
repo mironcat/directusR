@@ -1,7 +1,12 @@
 #devtools::install_github("r-lib/httr")
 library(httr)
 library(jsonlite)
-#library(openssl)
+#' Authentification into the API
+#' @param base.url A string. A project name
+#' @param login A string.
+#' @param password A string.
+#' @param directus_version A number.
+#' @return Message about success auth
 auth_to_directus <- function(base.url, login, password, directus_version=9) {
   if(directus_version<9){
     url_auth<-'auth/authenticate'

@@ -64,7 +64,7 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                   #' @param password a string.
                                   #' @return success message.
                                   #' @examples
-                                  #' db<-initDirectus(db='palebot')
+                                  #' db<-initDirectus(db='paleobot')
                                   #' db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
                                   #' #' # expected:
                                   #' # you are authentificated to..
@@ -76,7 +76,9 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                       self$auth.status <- is.character(auth_results$access_token)
                                       if (self$auth.status) {
                                         private$access_token <- auth_results$access_token
-                                        message(cat("success auth to", self$db))
+                                        message(cat("Success auth to", self$db,"!"))
+                                      } else {
+                                        warning(cat("Auth to", self$db, "is failed. Check login, password, and base url"))
                                       }
                                       invisible(self)
                                     },
@@ -86,9 +88,9 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                   #' @param params a string.
                                   #' @return dataframe with items.
                                   #' @examples
-                                  #' db<-initDirectus(db='palebot')
+                                  #' db<-initDirectus(db='paleobot')
                                   #' db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
-                                  #' items<-db$get_items('tablename', params="?limit=10")
+                                  #' items<-db$get_items('taxa', params="?limit=10")
                                   get_items =
                                     function(tablename, params)
                                     {
@@ -130,20 +132,3 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                 )
 )
 
-
-
-#'
-#' #' @description
-#' #' Create new items
-#' #' @param tablename a string.
-#' #' @return nothing.
-#' #' @examples
-#' #' db<-initDirectus(db='palebot')
-#' #' db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
-#' #' items<-db$create_items('tablename')
-#' directusInstance$set( 'public',
-#'                       'create_items',
-#'                       function(tablename) {
-#'                         self$current.table <- tablename
-#'                         invisible(self)
-#'                       })

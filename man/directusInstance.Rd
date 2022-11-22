@@ -15,7 +15,7 @@ A person can also greet you.
 ## Method `directusInstance$auth`
 ## ------------------------------------------------
 
-db<-initDirectus(db='palebot')
+db<-initDirectus(db='paleobot')
 db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
 #' # expected:
 # you are authentificated to..
@@ -24,9 +24,9 @@ db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
 ## Method `directusInstance$get_items`
 ## ------------------------------------------------
 
-db<-initDirectus(db='palebot')
+db<-initDirectus(db='paleobot')
 db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
-items<-db$get_items('tablename', params="?limit=10")
+items<-db$get_items('taxa', params="?limit=10")
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -116,7 +116,7 @@ success message.
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{db<-initDirectus(db='palebot')
+\preformatted{db<-initDirectus(db='paleobot')
 db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
 #' # expected:
 # you are authentificated to..
@@ -149,9 +149,9 @@ dataframe with items.
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{db<-initDirectus(db='palebot')
+\preformatted{db<-initDirectus(db='paleobot')
 db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
-items<-db$get_items('tablename', params="?limit=10")
+items<-db$get_items('taxa', params="?limit=10")
 }
 \if{html}{\out{</div>}}
 

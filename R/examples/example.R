@@ -3,7 +3,7 @@
 library(directusR)
 db1<-initDirectus(db='paleobot')
 db1
-db1$auth(login="534temp@gmail.com", password="LJat9spx")
+db1$auth(login="534temp@gmail.com", password="LJat9spxs")
 cabs<-db1$get_items('cabs', params="?limit=10")
 
 # or

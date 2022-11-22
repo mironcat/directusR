@@ -5,7 +5,7 @@ Version: 0.1.1
 Author: Eugeny Karasev
 Maintainer: The package maintainer <534temp@gmail.com>
 Description: Working with REST API of Directus Headless CMS. 
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: false
 RoxygenNote: 7.2.2

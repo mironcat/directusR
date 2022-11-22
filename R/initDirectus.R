@@ -26,8 +26,6 @@ source('R/directusInstance.R',local = T)
 #' @seealso
 #' [directusInstance()] - class documentation
 #' @details
-#' ## Description
-#'
 #' ## Methods
 #' ### Authentification
 #' For authenticating into the API run `db$auth()`with parameters.
