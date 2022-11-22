@@ -118,11 +118,11 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                       tbl.names=c('specimens','collections','localities','taxa','reflinks')
                                     ),
                                     paleobot=list(
-                                      base.url="https://paleobot.paleobotany.ru/",
+                                      base.url="http://paleobot.paleobotany.ru/",
                                       tbl.names=c('specimens','taxa','cabs','trays','boxes')
                                     ),
                                     paleosib=list(
-                                      base.url="http://biogeolog.tk/paleosib/",
+                                      base.url="https://biogeolog.tk/paleosib/",
                                       tbl.names=c('taxanorm','taxa'),
                                       directus_version=8
                                     )

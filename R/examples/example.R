@@ -4,7 +4,7 @@ library(directusR)
 db1<-initDirectus(db='paleobot')
 db1
 db1$auth(login="534temp@gmail.com", password="LJat9spx")
-bib<-db1$get_items('bibliography', params="?limit=10")
+cabs<-db1$get_items('cabs', params="?limit=10")
 
 # or
 db2<-initDirectus(db='paleosib', directus.version=8)
