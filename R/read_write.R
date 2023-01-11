@@ -20,8 +20,8 @@ updateOneRequest <- function(durl, id, dat, key) {
     url =  paste0(durl,'/',id),
     body = jsonstr,
     encode = "json",
-    content_type_json(),
-    add_headers( Authorization = paste("Bearer", key, sep = " ") )
+    httr::content_type_json(),
+    httr::add_headers( Authorization = paste("Bearer", key, sep = " ") )
   ) #req operatis
   print(httr::http_status(req)$message)
   content<-httr::content(req, encode = "json", encoding = "UTF-8")
