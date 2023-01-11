@@ -56,6 +56,7 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                     cat("  base.url:  ", self$base.url, "\n", sep = "")
                                     cat("  selected table:  ", self$current.table, "\n", sep = "")
                                     cat("  number of tables:  ", length(self$table.names), "\n", sep = "")
+                                    cat("  directus version: ", self$directus.version, "\n", sep = "")
                                     invisible(self)
                                   },
                                   #' @description
@@ -104,7 +105,35 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                       }
 
                                       invisible(self)
+                                    },
+                                  #' @description
+                                  #' Save Items
+                                  #' @param tablename a string.
+                                  #' @param id a number. ID of item in database
+                                  #' @param dat a dataframe with one row. columns is correspond to fields in database table
+                                  #' @return dataframe with updated item.
+                                  #' @examples
+                                  #' db<-initDirectus(db='paleobot')
+                                  #' dat <- data.frame (
+                                  #'   id  = c(6628),
+                                  #'   genus = c("test2")
+                                  #' )
+                                  #' db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
+                                  #' items<-db$save_one_item('taxanorm', 6628, dat)
+                                save_one_item =
+                                  function(tablename, dat, id)
+                                  {
+                                    if(!self$auth.status) {
+                                      warning('you are not authentificated. Please run "auth" method of directus instance')
+                                      return (NA)
+                                    } else {
+                                      self$current.table <- tablename
+                                      res<-updateOneRequest(durl =  self$durls[[tablename]],id=id, dat=dat,key=private$access_token)
+                                      return (res)
                                     }
+
+                                    invisible(self)
+                                  }
                                 ),
                                 private = list(
                                   access_token = NULL,
@@ -125,7 +154,7 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                     ),
                                     paleosib=list(
                                       base.url="https://biogeolog.tk/paleosib/",
-                                      tbl.names=c('taxanorm','taxa'),
+                                      tbl.names=c('collections','taxanorm','taxa'),
                                       directus_version=8
                                     )
                                   )

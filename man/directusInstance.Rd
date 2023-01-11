@@ -27,6 +27,18 @@ db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
 db<-initDirectus(db='paleobot')
 db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
 items<-db$get_items('taxa', params="?limit=10")
+
+## ------------------------------------------------
+## Method `directusInstance$save_one_item`
+## ------------------------------------------------
+
+db<-initDirectus(db='paleobot')
+dat <- data.frame (
+  id  = c(6628),
+  genus = c("test2")
+)
+db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
+items<-db$save_one_item('taxanorm', 6628, dat)
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -56,6 +68,7 @@ items<-db$get_items('taxa', params="?limit=10")
 \item \href{#method-directusInstance-print}{\code{directusInstance$print()}}
 \item \href{#method-directusInstance-auth}{\code{directusInstance$auth()}}
 \item \href{#method-directusInstance-get_items}{\code{directusInstance$get_items()}}
+\item \href{#method-directusInstance-save_one_item}{\code{directusInstance$save_one_item()}}
 \item \href{#method-directusInstance-clone}{\code{directusInstance$clone()}}
 }
 }
@@ -152,6 +165,44 @@ dataframe with items.
 \preformatted{db<-initDirectus(db='paleobot')
 db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
 items<-db$get_items('taxa', params="?limit=10")
+}
+\if{html}{\out{</div>}}
+
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-directusInstance-save_one_item"></a>}}
+\if{latex}{\out{\hypertarget{method-directusInstance-save_one_item}{}}}
+\subsection{Method \code{save_one_item()}}{
+Save Items
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{directusInstance$save_one_item(tablename, dat, id)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{tablename}}{a string.}
+
+\item{\code{dat}}{a dataframe with one row. columns is correspond to fields in database table}
+
+\item{\code{id}}{a number. ID of item in database}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+dataframe with updated item.
+}
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{db<-initDirectus(db='paleobot')
+dat <- data.frame (
+  id  = c(6628),
+  genus = c("test2")
+)
+db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
+items<-db$save_one_item('taxanorm', 6628, dat)
 }
 \if{html}{\out{</div>}}
 
