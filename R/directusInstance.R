@@ -154,7 +154,7 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                     ),
                                     paleosib=list(
                                       base.url="https://biogeolog.tk/paleosib/",
-                                      tbl.names=c('collections','taxanorm','taxa'),
+                                      tbl.names=c('occurences', 'colls','taxanorm','taxa','refs'),
                                       directus_version=8
                                     )
                                   )

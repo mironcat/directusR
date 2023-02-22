@@ -3,9 +3,10 @@
 library(directusR)
 db1<-initDirectus(db='paleosib',directus.version = 8)
 db1
-db1$auth(login="534temp@gmail.com", password="LJat9spx")
-taxanorm <-db1$get_items(tablename = 'taxanorm', params = '?limit=10')
+db1$auth(login="xxxxxxx", password="xxxxxxx")
 
+taxanorm <-db1$get_items(tablename = 'taxanorm', params = '?limit=10')
+colls <-db1$get_items(tablename = 'colls', params = '?limit=-1')
 dat <- data.frame (
   genus = c("test534")
 )
