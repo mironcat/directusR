@@ -93,14 +93,15 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                   #' db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
                                   #' items<-db$get_items('taxa', params="?limit=10")
                                   get_items =
-                                    function(tablename, params)
+                                    function(tablename,  params = '?limit=-1')
                                     {
                                       if(!self$auth.status) {
                                         warning('you are not authentificated. Please run "auth" method of directus instance')
                                         return (NA)
                                       } else {
                                         self$current.table <- tablename
-                                        res<-getRequest(durl =  self$durls[[tablename]], params=params,key =private$access_token)
+                                        current.url <- paste0(self$base.url,'items/',  tablename)
+                                        res<-getRequest(durl = current.url, params=params,key =private$access_token)
                                         return (res)
                                       }
 
@@ -141,16 +142,16 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                   password = NULL,
                                   db.temp = list(
                                     geoloc=list(
-                                      base.url="http://geoloc.paleobotany.ru/",
+                                      base.url="https://geoloc.paleobotany.ru/",
                                       tbl.names=c('sections','levels','strats','references')
                                     ),
                                     arth=list(
-                                      base.url="http://arth.mironcat.tk/",
-                                      tbl.names=c('specimens','collections','localities','taxa','reflinks')
+                                      base.url="https://arth.mironcat.tk/",
+                                      tbl.names=c('specimens','collections','places','expeditions','subcollections','taxa','reflinks')
                                     ),
                                     paleobot=list(
-                                      base.url="http://paleobot.paleobotany.ru/",
-                                      tbl.names=c('specimens','taxa','cabs','trays','boxes')
+                                      base.url="https://paleobot.paleobotany.ru/",
+                                      tbl.names=c('specimens','taxa','cabs','trays','boxes', 'places')
                                     ),
                                     paleosib=list(
                                       base.url="https://biogeolog.tk/paleosib/",

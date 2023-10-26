@@ -2,7 +2,9 @@
 
 library(directusR)
 db1<-initDirectus(db='paleosib',directus.version = 8)
+db1<-initDirectus(db='paleobot')
 db1
+
 db1$auth(login="xxxxxxx", password="xxxxxxx")
 
 taxanorm <-db1$get_items(tablename = 'taxanorm', params = '?limit=10')
@@ -36,3 +38,5 @@ db.info <- list(
 
 db3<-initDirectus(db='myproject', db.info=db.info)
 db3
+
+
