@@ -1,13 +1,14 @@
 ### ** Examples
-
+# library("devtools")
+#install_github("mironcat/directusR", force=T)
 library(directusR)
-db1<-initDirectus(db='paleosib',directus.version = 8)
+db1<-initDirectus(db='arth',directus.version = 9)
 db1<-initDirectus(db='paleobot')
 db1
 
 db1$auth(login="xxxxxxx", password="xxxxxxx")
 
-taxanorm <-db1$get_items(tablename = 'taxanorm', params = '?limit=10')
+taxanorm <-db1$get_items(tablename = 'places', params = '?limit=10')
 colls <-db1$get_items(tablename = 'colls', params = '?limit=-1')
 dat <- data.frame (
   genus = c("test534")
@@ -38,5 +39,6 @@ db.info <- list(
 
 db3<-initDirectus(db='myproject', db.info=db.info)
 db3
+
 
 
