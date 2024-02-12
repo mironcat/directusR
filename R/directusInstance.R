@@ -146,7 +146,7 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                       tbl.names=c('sections','levels','strats','references')
                                     ),
                                     arth=list(
-                                      base.url="http://185.155.18.229/",
+                                      base.url="https://arth.paleoentomology.ru/",
                                       tbl.names=c('specimens','collections','places','expeditions','subcollections','taxa','reflinks')
                                     ),
                                     paleobot=list(
