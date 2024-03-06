@@ -24,7 +24,7 @@ updateOneRequest <- function(durl, id, dat, key) {
     httr::add_headers( Authorization = paste("Bearer", key, sep = " ") )
   ) #req operatis
   print(httr::http_status(req)$message)
-  content<-httr::content(req, encode = "json", encoding = "UTF-8")
-  content_data<-data.frame(lapply(content$data, function(x) t(data.frame(x))))
-  return (content_data)
+  # content<-httr::content(req, encode = "json", encoding = "UTF-8")
+  # content_data<-data.frame(lapply(content$data, function(x) t(data.frame(x))))
+  # return (content_data)
 }

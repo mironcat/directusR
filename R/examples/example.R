@@ -14,7 +14,8 @@ dat <- data.frame (
   genus = c("test534")
 )
 
-db1$save_one_item(tablename = 'taxanorm',id=6628, dat=dat)
+db1$update_one_item(tablename = 'taxanorm',id=6628, dat=dat)
+
 source('R/read_write.R')
 test1<-getRequest(durl = 'https://biogeolog.tk/paleosib/items/taxanorm',params = '?limit=5', key = key)
 test2<-updateOneRequest(durl = 'https://biogeolog.tk/paleosib/items/taxanorm', id=6628,dat = dat,key =key)

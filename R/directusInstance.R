@@ -121,7 +121,7 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                   #' )
                                   #' db$auth(login="YOUR LOGIN", password="YOUR PASSWORD")
                                   #' items<-db$save_one_item('taxanorm', 6628, dat)
-                                save_one_item =
+                                update_one_item =
                                   function(tablename, dat, id)
                                   {
                                     if(!self$auth.status) {
