@@ -1,7 +1,7 @@
 Package: directusR
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.1
+Title: The package provide some functions for use REST API of Directus Headless CMS
+Version: 0.2.1
 Author: Eugeny Karasev
 Maintainer: The package maintainer <534temp@gmail.com>
 Description: Working with REST API of Directus Headless CMS. 
