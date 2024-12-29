@@ -28,3 +28,19 @@ updateOneRequest <- function(durl, id, dat, key) {
   # content_data<-data.frame(lapply(content$data, function(x) t(data.frame(x))))
   # return (content_data)
 }
+insertOneRequest<- function(durl, id, dat, key) {
+  if (nrow(dat)!=1){
+    message("dataframe must be with ONE row")
+    return()
+  }
+  jsonstr<-jsonlite::toJSON(dat)
+  jsonstr<-substring(jsonstr, 2)
+  jsonstr<-substring(jsonstr,1, nchar(jsonstr)-1)
+  req<-httr::PATCH(
+    url =  paste0(durl,'/',id),
+    body = jsonstr,
+    encode = "json",
+    httr::content_type_json(),
+    httr::add_headers( Authorization = paste("Bearer", key, sep = " ") )
+  )
+}

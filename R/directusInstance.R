@@ -142,15 +142,15 @@ directusInstance <- R6::R6Class(classname = "directusInstance",
                                   password = NULL,
                                   db.temp = list(
                                     geoloc=list(
-                                      base.url="https://geoloc.paleobotany.ru/",
+                                      base.url="https://geoloc.paleoentomology.ru/",
                                       tbl.names=c('sections','levels','strats','references')
                                     ),
                                     arth=list(
-                                      base.url="https://arth.paleoentomology.ru/",
+                                      base.url="https://db.paleoentomology.ru/",
                                       tbl.names=c('specimens','collections','places','expeditions','subcollections','taxa','reflinks')
                                     ),
                                     paleobot=list(
-                                      base.url="https://paleobot.paleobotany.ru/",
+                                      base.url="https://paleobot.paleoentomology.ru/",
                                       tbl.names=c('specimens','taxa','cabs','trays','boxes', 'places')
                                     ),
                                     paleosib=list(
